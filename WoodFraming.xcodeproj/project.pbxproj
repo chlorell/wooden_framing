@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AF20C011B7F49E000EEFB3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C001B7F49E000EEFB3E /* main.m */; };
+		4AF20C041B7F49E000EEFB3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C031B7F49E000EEFB3E /* AppDelegate.m */; };
+		4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C051B7F49E000EEFB3E /* Shader.fsh */; };
+		4AF20C081B7F49E000EEFB3E /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C071B7F49E000EEFB3E /* Shader.vsh */; };
+		4AF20C0B1B7F49E000EEFB3E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C0A1B7F49E000EEFB3E /* GameViewController.m */; };
+		4AF20C0E1B7F49E000EEFB3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C0C1B7F49E000EEFB3E /* Main.storyboard */; };
+		4AF20C101B7F49E000EEFB3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C0F1B7F49E000EEFB3E /* Images.xcassets */; };
+		4AF20C131B7F49E000EEFB3E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C111B7F49E000EEFB3E /* LaunchScreen.xib */; };
+		4AF20C1F1B7F49E100EEFB3E /* WoodFramingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C1E1B7F49E100EEFB3E /* WoodFramingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AF20C191B7F49E100EEFB3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AF20BF31B7F49E000EEFB3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AF20BFA1B7F49E000EEFB3E;
+			remoteInfo = WoodFraming;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4AF20BFB1B7F49E000EEFB3E /* WoodFraming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoodFraming.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF20BFF1B7F49E000EEFB3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AF20C001B7F49E000EEFB3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4AF20C021B7F49E000EEFB3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4AF20C031B7F49E000EEFB3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4AF20C051B7F49E000EEFB3E /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		4AF20C071B7F49E000EEFB3E /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		4AF20C091B7F49E000EEFB3E /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		4AF20C0A1B7F49E000EEFB3E /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		4AF20C0D1B7F49E000EEFB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4AF20C0F1B7F49E000EEFB3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4AF20C121B7F49E000EEFB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4AF20C181B7F49E100EEFB3E /* WoodFramingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoodFramingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF20C1D1B7F49E100EEFB3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AF20C1E1B7F49E100EEFB3E /* WoodFramingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoodFramingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AF20BF81B7F49E000EEFB3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AF20C151B7F49E100EEFB3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AF20BF21B7F49E000EEFB3E = {
+			isa = PBXGroup;
+			children = (
+				4AF20BFD1B7F49E000EEFB3E /* WoodFraming */,
+				4AF20C1B1B7F49E100EEFB3E /* WoodFramingTests */,
+				4AF20BFC1B7F49E000EEFB3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AF20BFC1B7F49E000EEFB3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AF20BFB1B7F49E000EEFB3E /* WoodFraming.app */,
+				4AF20C181B7F49E100EEFB3E /* WoodFramingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AF20BFD1B7F49E000EEFB3E /* WoodFraming */ = {
+			isa = PBXGroup;
+			children = (
+				4AF20C021B7F49E000EEFB3E /* AppDelegate.h */,
+				4AF20C031B7F49E000EEFB3E /* AppDelegate.m */,
+				4AF20C051B7F49E000EEFB3E /* Shader.fsh */,
+				4AF20C071B7F49E000EEFB3E /* Shader.vsh */,
+				4AF20C091B7F49E000EEFB3E /* GameViewController.h */,
+				4AF20C0A1B7F49E000EEFB3E /* GameViewController.m */,
+				4AF20C0C1B7F49E000EEFB3E /* Main.storyboard */,
+				4AF20C0F1B7F49E000EEFB3E /* Images.xcassets */,
+				4AF20C111B7F49E000EEFB3E /* LaunchScreen.xib */,
+				4AF20BFE1B7F49E000EEFB3E /* Supporting Files */,
+			);
+			path = WoodFraming;
+			sourceTree = "<group>";
+		};
+		4AF20BFE1B7F49E000EEFB3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AF20BFF1B7F49E000EEFB3E /* Info.plist */,
+				4AF20C001B7F49E000EEFB3E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AF20C1B1B7F49E100EEFB3E /* WoodFramingTests */ = {
+			isa = PBXGroup;
+			children = (
+				4AF20C1E1B7F49E100EEFB3E /* WoodFramingTests.m */,
+				4AF20C1C1B7F49E100EEFB3E /* Supporting Files */,
+			);
+			path = WoodFramingTests;
+			sourceTree = "<group>";
+		};
+		4AF20C1C1B7F49E100EEFB3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AF20C1D1B7F49E100EEFB3E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AF20BFA1B7F49E000EEFB3E /* WoodFraming */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AF20C221B7F49E100EEFB3E /* Build configuration list for PBXNativeTarget "WoodFraming" */;
+			buildPhases = (
+				4AF20BF71B7F49E000EEFB3E /* Sources */,
+				4AF20BF81B7F49E000EEFB3E /* Frameworks */,
+				4AF20BF91B7F49E000EEFB3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WoodFraming;
+			productName = WoodFraming;
+			productReference = 4AF20BFB1B7F49E000EEFB3E /* WoodFraming.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4AF20C171B7F49E100EEFB3E /* WoodFramingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AF20C251B7F49E100EEFB3E /* Build configuration list for PBXNativeTarget "WoodFramingTests" */;
+			buildPhases = (
+				4AF20C141B7F49E100EEFB3E /* Sources */,
+				4AF20C151B7F49E100EEFB3E /* Frameworks */,
+				4AF20C161B7F49E100EEFB3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AF20C1A1B7F49E100EEFB3E /* PBXTargetDependency */,
+			);
+			name = WoodFramingTests;
+			productName = WoodFramingTests;
+			productReference = 4AF20C181B7F49E100EEFB3E /* WoodFramingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AF20BF31B7F49E000EEFB3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Ocean Planet Studios";
+				TargetAttributes = {
+					4AF20BFA1B7F49E000EEFB3E = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					4AF20C171B7F49E100EEFB3E = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 4AF20BFA1B7F49E000EEFB3E;
+					};
+				};
+			};
+			buildConfigurationList = 4AF20BF61B7F49E000EEFB3E /* Build configuration list for PBXProject "WoodFraming" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AF20BF21B7F49E000EEFB3E;
+			productRefGroup = 4AF20BFC1B7F49E000EEFB3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AF20BFA1B7F49E000EEFB3E /* WoodFraming */,
+				4AF20C171B7F49E100EEFB3E /* WoodFramingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AF20BF91B7F49E000EEFB3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF20C131B7F49E000EEFB3E /* LaunchScreen.xib in Resources */,
+				4AF20C0E1B7F49E000EEFB3E /* Main.storyboard in Resources */,
+				4AF20C101B7F49E000EEFB3E /* Images.xcassets in Resources */,
+				4AF20C081B7F49E000EEFB3E /* Shader.vsh in Resources */,
+				4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AF20C161B7F49E100EEFB3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AF20BF71B7F49E000EEFB3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF20C041B7F49E000EEFB3E /* AppDelegate.m in Sources */,
+				4AF20C0B1B7F49E000EEFB3E /* GameViewController.m in Sources */,
+				4AF20C011B7F49E000EEFB3E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AF20C141B7F49E100EEFB3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF20C1F1B7F49E100EEFB3E /* WoodFramingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AF20C1A1B7F49E100EEFB3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AF20BFA1B7F49E000EEFB3E /* WoodFraming */;
+			targetProxy = 4AF20C191B7F49E100EEFB3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4AF20C0C1B7F49E000EEFB3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AF20C0D1B7F49E000EEFB3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4AF20C111B7F49E000EEFB3E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AF20C121B7F49E000EEFB3E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AF20C201B7F49E100EEFB3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AF20C211B7F49E100EEFB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AF20C231B7F49E100EEFB3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WoodFraming/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4AF20C241B7F49E100EEFB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WoodFraming/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4AF20C261B7F49E100EEFB3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WoodFramingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoodFraming.app/WoodFraming";
+			};
+			name = Debug;
+		};
+		4AF20C271B7F49E100EEFB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WoodFramingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoodFraming.app/WoodFraming";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AF20BF61B7F49E000EEFB3E /* Build configuration list for PBXProject "WoodFraming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AF20C201B7F49E100EEFB3E /* Debug */,
+				4AF20C211B7F49E100EEFB3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AF20C221B7F49E100EEFB3E /* Build configuration list for PBXNativeTarget "WoodFraming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AF20C231B7F49E100EEFB3E /* Debug */,
+				4AF20C241B7F49E100EEFB3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4AF20C251B7F49E100EEFB3E /* Build configuration list for PBXNativeTarget "WoodFramingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AF20C261B7F49E100EEFB3E /* Debug */,
+				4AF20C271B7F49E100EEFB3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AF20BF31B7F49E000EEFB3E /* Project object */;
+}
