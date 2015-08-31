@@ -357,7 +357,7 @@ public:
     
     void src(const char* const src) noexcept
     {
-        glShaderSource(name, 1, src, nullptr);
+        glShaderSource(name, 1, &src, nullptr);
     }
     
     void compile() noexcept

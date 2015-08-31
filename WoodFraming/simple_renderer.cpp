@@ -13,8 +13,8 @@
 
 floppy::simple_renderer::simple_renderer()
 {
-    gl::shader<gl::vertex> vertex_s;
-    vertex_s.source("fuck you freddy!!!");
+    gl::vertex_shader vertex_s;
+    vertex_s.src("fuck you freddy!!!");
     auto status_v=vertex_s.status();
     if(!status_v.first)
     {
@@ -24,8 +24,8 @@ floppy::simple_renderer::simple_renderer()
     
     prog1.attach(vertex_s);
     
-    gl::shader<gl::fragment> fragment_s;
-    fragment_s.source("fuck you freddy!!!");
+    gl::fragment_shader fragment_s;
+    fragment_s.src("fuck you freddy!!!");
     auto status_f=fragment_s.status();
     if(!status_f.first)
     {

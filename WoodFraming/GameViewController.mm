@@ -10,7 +10,7 @@
 
 
 
-#include "iOS_wrapper.hxx"
+#include "iOS_wrapper.hpp"
 #import "GameViewController.h"
 #import <OpenGLES/ES2/glext.h>
 

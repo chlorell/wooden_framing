@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#include "iOS_wrapper.hxx"
+#include "iOS_wrapper.hpp"
 
 @interface AppDelegate ()
 
@@ -18,6 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSBundle* mainBundle;
+    
+    // Get the main bundle for the app.
+    mainBundle = [NSBundle mainBundle];
+    const char * resourcePath=[mainBundle.resourcePath cStringUsingEncoding:NSStringEncodingConversionAllowLossy];
+    floppy::setResourcesBaseDirectory(resourcePath);
+    
     return YES;
 }
 

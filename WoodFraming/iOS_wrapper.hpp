@@ -30,7 +30,7 @@ namespace floppy
     void failedToCreateGLContext();
 
 
-    
+    void setResourcesBaseDirectory(const char * path);
 };
 
 

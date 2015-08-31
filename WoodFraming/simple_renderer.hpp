@@ -9,16 +9,16 @@
 #ifndef __WoodFraming__simple_renderer__
 #define __WoodFraming__simple_renderer__
 
-#include "gl_wrapper.hpp"
+#include "cpp/gl_elements.hpp"
 
 namespace floppy {
     class simple_renderer
     {
         gl::program prog1;
-        gl::res_pool<8, gl::texture> texpool512;
-        gl::res_pool<4, gl::texture> texpool1024;
-    public:
+        gl::texture_2d textures[8];
+     public:
         simple_renderer();
+        
         
     };
 }

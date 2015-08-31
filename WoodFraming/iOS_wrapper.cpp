@@ -13,6 +13,8 @@
 
 #include <OpenGLES/ES2/glext.h>
 
+#include <boost/filesystem.hpp>
+
 namespace floppy{
     
     
@@ -66,4 +68,21 @@ void failedToCreateGLContext()
 {
     std::cout<<"failedToCreateGLContext"<<std::endl;
 }
+    
+    
+void setResourcesBaseDirectory(const char * path)
+{
+        std::cout<<"setResourcesBaseDirectory:"<<path<<std::endl;
+    
+    for(auto entry : boost::filesystem::directory_iterator(path))
+    {
+         std::cout<<">>"<<entry.path().c_str()<<std::endl;
+    }
+    
+    
+    std::cout<<"current path:"<<boost::filesystem::current_path()<<std::endl;
+    
+    
+}
+    
 }
