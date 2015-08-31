@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4AF20C011B7F49E000EEFB3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C001B7F49E000EEFB3E /* main.m */; };
-		4AF20C041B7F49E000EEFB3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C031B7F49E000EEFB3E /* AppDelegate.m */; };
+		4AF20C041B7F49E000EEFB3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */; };
 		4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C051B7F49E000EEFB3E /* Shader.fsh */; };
 		4AF20C081B7F49E000EEFB3E /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C071B7F49E000EEFB3E /* Shader.vsh */; };
-		4AF20C0B1B7F49E000EEFB3E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C0A1B7F49E000EEFB3E /* GameViewController.m */; };
+		4AF20C0B1B7F49E000EEFB3E /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C0A1B7F49E000EEFB3E /* GameViewController.mm */; };
 		4AF20C0E1B7F49E000EEFB3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C0C1B7F49E000EEFB3E /* Main.storyboard */; };
 		4AF20C101B7F49E000EEFB3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C0F1B7F49E000EEFB3E /* Images.xcassets */; };
 		4AF20C131B7F49E000EEFB3E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C111B7F49E000EEFB3E /* LaunchScreen.xib */; };
 		4AF20C1F1B7F49E100EEFB3E /* WoodFramingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C1E1B7F49E100EEFB3E /* WoodFramingTests.m */; };
+		4AF20C2A1B7F4AF600EEFB3E /* iOS_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C281B7F4AF600EEFB3E /* iOS_wrapper.cpp */; };
+		4AF20C2C1B7F4F1000EEFB3E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF20C2B1B7F4F1000EEFB3E /* GLKit.framework */; };
+		4AF20C301B82792700EEFB3E /* simple_renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C2E1B82792700EEFB3E /* simple_renderer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,21 +32,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A5F393A1B94CCA700D3CE27 /* gl_elements.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gl_elements.hpp; sourceTree = "<group>"; };
 		4AF20BFB1B7F49E000EEFB3E /* WoodFraming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoodFraming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF20BFF1B7F49E000EEFB3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AF20C001B7F49E000EEFB3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AF20C021B7F49E000EEFB3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4AF20C031B7F49E000EEFB3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4AF20C051B7F49E000EEFB3E /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		4AF20C071B7F49E000EEFB3E /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		4AF20C091B7F49E000EEFB3E /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		4AF20C0A1B7F49E000EEFB3E /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		4AF20C0A1B7F49E000EEFB3E /* GameViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameViewController.mm; sourceTree = "<group>"; };
 		4AF20C0D1B7F49E000EEFB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AF20C0F1B7F49E000EEFB3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4AF20C121B7F49E000EEFB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4AF20C181B7F49E100EEFB3E /* WoodFramingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoodFramingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF20C1D1B7F49E100EEFB3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AF20C1E1B7F49E100EEFB3E /* WoodFramingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoodFramingTests.m; sourceTree = "<group>"; };
+		4AF20C281B7F4AF600EEFB3E /* iOS_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iOS_wrapper.cpp; sourceTree = "<group>"; };
+		4AF20C291B7F4AF600EEFB3E /* iOS_wrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = iOS_wrapper.hpp; sourceTree = "<group>"; };
+		4AF20C2B1B7F4F1000EEFB3E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		4AF20C2D1B8278B800EEFB3E /* gl_wrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gl_wrapper.hpp; sourceTree = "<group>"; };
+		4AF20C2E1B82792700EEFB3E /* simple_renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simple_renderer.cpp; sourceTree = "<group>"; };
+		4AF20C2F1B82792700EEFB3E /* simple_renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = simple_renderer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF20C2C1B7F4F1000EEFB3E /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,9 +75,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A5F39391B94CCA700D3CE27 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F393A1B94CCA700D3CE27 /* gl_elements.hpp */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
 		4AF20BF21B7F49E000EEFB3E = {
 			isa = PBXGroup;
 			children = (
+				4AF20C2B1B7F4F1000EEFB3E /* GLKit.framework */,
 				4AF20BFD1B7F49E000EEFB3E /* WoodFraming */,
 				4AF20C1B1B7F49E100EEFB3E /* WoodFramingTests */,
 				4AF20BFC1B7F49E000EEFB3E /* Products */,
@@ -85,16 +105,22 @@
 		4AF20BFD1B7F49E000EEFB3E /* WoodFraming */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F39391B94CCA700D3CE27 /* cpp */,
 				4AF20C021B7F49E000EEFB3E /* AppDelegate.h */,
-				4AF20C031B7F49E000EEFB3E /* AppDelegate.m */,
+				4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */,
 				4AF20C051B7F49E000EEFB3E /* Shader.fsh */,
 				4AF20C071B7F49E000EEFB3E /* Shader.vsh */,
 				4AF20C091B7F49E000EEFB3E /* GameViewController.h */,
-				4AF20C0A1B7F49E000EEFB3E /* GameViewController.m */,
+				4AF20C0A1B7F49E000EEFB3E /* GameViewController.mm */,
 				4AF20C0C1B7F49E000EEFB3E /* Main.storyboard */,
 				4AF20C0F1B7F49E000EEFB3E /* Images.xcassets */,
 				4AF20C111B7F49E000EEFB3E /* LaunchScreen.xib */,
 				4AF20BFE1B7F49E000EEFB3E /* Supporting Files */,
+				4AF20C281B7F4AF600EEFB3E /* iOS_wrapper.cpp */,
+				4AF20C2E1B82792700EEFB3E /* simple_renderer.cpp */,
+				4AF20C2F1B82792700EEFB3E /* simple_renderer.hpp */,
+				4AF20C2D1B8278B800EEFB3E /* gl_wrapper.hpp */,
+				4AF20C291B7F4AF600EEFB3E /* iOS_wrapper.hpp */,
 			);
 			path = WoodFraming;
 			sourceTree = "<group>";
@@ -174,6 +200,7 @@
 				TargetAttributes = {
 					4AF20BFA1B7F49E000EEFB3E = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 3R8LE96SGP;
 					};
 					4AF20C171B7F49E100EEFB3E = {
 						CreatedOnToolsVersion = 6.4;
@@ -227,9 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AF20C041B7F49E000EEFB3E /* AppDelegate.m in Sources */,
-				4AF20C0B1B7F49E000EEFB3E /* GameViewController.m in Sources */,
+				4AF20C041B7F49E000EEFB3E /* AppDelegate.mm in Sources */,
+				4AF20C0B1B7F49E000EEFB3E /* GameViewController.mm in Sources */,
 				4AF20C011B7F49E000EEFB3E /* main.m in Sources */,
+				4AF20C2A1B7F4AF600EEFB3E /* iOS_wrapper.cpp in Sources */,
+				4AF20C301B82792700EEFB3E /* simple_renderer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WoodFraming/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WoodFraming/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,6 +457,7 @@
 				4AF20C241B7F49E100EEFB3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4AF20C251B7F49E100EEFB3E /* Build configuration list for PBXNativeTarget "WoodFramingTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +466,7 @@
 				4AF20C271B7F49E100EEFB3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
