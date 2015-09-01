@@ -15,6 +15,9 @@
 
 #include <boost/filesystem.hpp>
 
+#include <pugixml.hpp>
+#include <Box2D/Box2D.h>
+
 namespace floppy{
     
     
@@ -25,6 +28,13 @@ int desiredFPS()
 
 void startEngine(){
     std::cout<<"startEngine"<<std::endl;
+    
+     std::cout<<"b2_version="<<b2_version.major<<"."<<b2_version.minor<<"@"<<b2_version.revision<<std::endl;
+     std::cout<<"liquidFunVersion="<<b2_liquidFunVersionString<<std::endl;
+   
+    std::cout<<"PUGIXML_VERSION="<<PUGIXML_VERSION<<std::endl;
+
+    
 }
 
 

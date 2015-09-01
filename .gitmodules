@@ -1,3 +1,6 @@
 [submodule "WoodFraming/extern/liquidfun"]
 	path = WoodFraming/extern/liquidfun
 	url = https://github.com/chlorell/liquidfun.git
+[submodule "WoodFraming/extern/pugixml"]
+	path = WoodFraming/extern/pugixml
+	url = https://github.com/chlorell/pugixml.git
