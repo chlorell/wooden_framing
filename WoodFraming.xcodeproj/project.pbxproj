@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A5F393C1B94EC0000D3CE27 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5F393B1B94EC0000D3CE27 /* boost.framework */; };
+		4A5F393F1B95B7D600D3CE27 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5F393B1B94EC0000D3CE27 /* boost.framework */; };
 		4AF20C011B7F49E000EEFB3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C001B7F49E000EEFB3E /* main.m */; };
 		4AF20C041B7F49E000EEFB3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */; };
 		4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C051B7F49E000EEFB3E /* Shader.fsh */; };
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A5F393C1B94EC0000D3CE27 /* boost.framework in Frameworks */,
+				4A5F393F1B95B7D600D3CE27 /* boost.framework in Frameworks */,
 				4AF20C2C1B7F4F1000EEFB3E /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +96,13 @@
 			name = shaders;
 			sourceTree = "<group>";
 		};
+		4A5F393E1B95B6D400D3CE27 /* extern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = extern;
+			sourceTree = "<group>";
+		};
 		4AF20BF21B7F49E000EEFB3E = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +126,7 @@
 		4AF20BFD1B7F49E000EEFB3E /* WoodFraming */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F393E1B95B6D400D3CE27 /* extern */,
 				4A5F39391B94CCA700D3CE27 /* cpp */,
 				4AF20C021B7F49E000EEFB3E /* AppDelegate.h */,
 				4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */,
