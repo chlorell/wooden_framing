@@ -63,6 +63,7 @@
 		4A5F49381B95BBB200D3CE27 /* b2VoronoiDiagram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F48B81B95BBB200D3CE27 /* b2VoronoiDiagram.cpp */; };
 		4A5F49391B95BBB200D3CE27 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F48BB1B95BBB200D3CE27 /* b2Rope.cpp */; };
 		4A5F49401B95BF8000D3CE27 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F493E1B95BF8000D3CE27 /* pugixml.cpp */; };
+		4A5F49431B95C26E00D3CE27 /* collada_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F49411B95C26E00D3CE27 /* collada_loader.cpp */; };
 		4AF20C011B7F49E000EEFB3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C001B7F49E000EEFB3E /* main.m */; };
 		4AF20C041B7F49E000EEFB3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */; };
 		4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C051B7F49E000EEFB3E /* Shader.fsh */; };
@@ -206,6 +207,9 @@
 		4A5F493D1B95BF8000D3CE27 /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugiconfig.hpp; sourceTree = "<group>"; };
 		4A5F493E1B95BF8000D3CE27 /* pugixml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pugixml.cpp; sourceTree = "<group>"; };
 		4A5F493F1B95BF8000D3CE27 /* pugixml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugixml.hpp; sourceTree = "<group>"; };
+		4A5F49411B95C26E00D3CE27 /* collada_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = collada_loader.cpp; sourceTree = "<group>"; };
+		4A5F49421B95C26E00D3CE27 /* collada_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collada_loader.h; sourceTree = "<group>"; };
+		4A5F49441B95C90F00D3CE27 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
 		4AF20BFB1B7F49E000EEFB3E /* WoodFraming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoodFraming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF20BFF1B7F49E000EEFB3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AF20C001B7F49E000EEFB3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				4A5F393A1B94CCA700D3CE27 /* gl_elements.hpp */,
 				4AF20C2E1B82792700EEFB3E /* simple_renderer.cpp */,
 				4AF20C2F1B82792700EEFB3E /* simple_renderer.hpp */,
+				4A5F49411B95C26E00D3CE27 /* collada_loader.cpp */,
+				4A5F49421B95C26E00D3CE27 /* collada_loader.h */,
 			);
 			path = cpp;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 		4AF20BFD1B7F49E000EEFB3E /* WoodFraming */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F49441B95C90F00D3CE27 /* resources */,
 				4A5F393E1B95B6D400D3CE27 /* extern */,
 				4A5F39391B94CCA700D3CE27 /* cpp */,
 				4AF20C021B7F49E000EEFB3E /* AppDelegate.h */,
@@ -670,6 +677,7 @@
 				4AF20C2A1B7F4AF600EEFB3E /* iOS_wrapper.cpp in Sources */,
 				4AF20C301B82792700EEFB3E /* simple_renderer.cpp in Sources */,
 				4A5F49221B95BBB200D3CE27 /* b2ContactSolver.cpp in Sources */,
+				4A5F49431B95C26E00D3CE27 /* collada_loader.cpp in Sources */,
 				4A5F48CC1B95BBB200D3CE27 /* b2BlockAllocator.cpp in Sources */,
 				4A5F49401B95BF8000D3CE27 /* pugixml.cpp in Sources */,
 				4A5F49381B95BBB200D3CE27 /* b2VoronoiDiagram.cpp in Sources */,
