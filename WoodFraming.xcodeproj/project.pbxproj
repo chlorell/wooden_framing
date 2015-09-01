@@ -87,6 +87,15 @@
 			path = cpp;
 			sourceTree = "<group>";
 		};
+		4A5F393D1B9595CA00D3CE27 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				4AF20C071B7F49E000EEFB3E /* Shader.vsh */,
+				4AF20C051B7F49E000EEFB3E /* Shader.fsh */,
+			);
+			name = shaders;
+			sourceTree = "<group>";
+		};
 		4AF20BF21B7F49E000EEFB3E = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +122,6 @@
 				4A5F39391B94CCA700D3CE27 /* cpp */,
 				4AF20C021B7F49E000EEFB3E /* AppDelegate.h */,
 				4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */,
-				4AF20C051B7F49E000EEFB3E /* Shader.fsh */,
-				4AF20C071B7F49E000EEFB3E /* Shader.vsh */,
 				4AF20C091B7F49E000EEFB3E /* GameViewController.h */,
 				4AF20C0A1B7F49E000EEFB3E /* GameViewController.mm */,
 				4AF20C0C1B7F49E000EEFB3E /* Main.storyboard */,
@@ -130,6 +137,7 @@
 		4AF20BFE1B7F49E000EEFB3E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F393D1B9595CA00D3CE27 /* shaders */,
 				4AF20BFF1B7F49E000EEFB3E /* Info.plist */,
 				4AF20C001B7F49E000EEFB3E /* main.m */,
 			);

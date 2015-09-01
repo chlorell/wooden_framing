@@ -79,10 +79,7 @@ void setResourcesBaseDirectory(const char * path)
          std::cout<<">>"<<entry.path().c_str()<<std::endl;
     }
     
-    
-    std::cout<<"current path:"<<boost::filesystem::current_path()<<std::endl;
-    
-    
+ 
 }
     
 }
