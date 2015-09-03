@@ -17,6 +17,7 @@
 
 #include <pugixml.hpp>
 #include <Box2D/Box2D.h>
+#include <glm/glm.hpp>
 
 namespace floppy{
     
@@ -33,7 +34,8 @@ void startEngine(){
      std::cout<<"liquidFunVersion="<<b2_liquidFunVersionString<<std::endl;
    
     std::cout<<"PUGIXML_VERSION="<<PUGIXML_VERSION<<std::endl;
-
+    glm::vec2 ver(b2_version.major,b2_version.minor);
+    
     
 }
 

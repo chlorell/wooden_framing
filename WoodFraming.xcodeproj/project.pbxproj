@@ -847,6 +847,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(PROJECT_DIR)/WoodFraming/extern/liquidfun/liquidfun/Box2D",
 					"$(PROJECT_DIR)/WoodFraming/extern/pugixml/src",
+					"$(PROJECT_DIR)/WoodFraming/extern/glm",
 				);
 				INFOPLIST_FILE = WoodFraming/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -869,6 +870,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(PROJECT_DIR)/WoodFraming/extern/liquidfun/liquidfun/Box2D",
 					"$(PROJECT_DIR)/WoodFraming/extern/pugixml/src",
+					"$(PROJECT_DIR)/WoodFraming/extern/glm",
 				);
 				INFOPLIST_FILE = WoodFraming/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
