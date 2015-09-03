@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A5F393F1B95B7D600D3CE27 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5F393B1B94EC0000D3CE27 /* boost.framework */; };
+		4A4A494A1B9897C5009BAC49 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5F393B1B94EC0000D3CE27 /* boost.framework */; };
 		4A5F48C01B95BBB200D3CE27 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F47FB1B95BBB200D3CE27 /* b2BroadPhase.cpp */; };
 		4A5F48C11B95BBB200D3CE27 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F47FD1B95BBB200D3CE27 /* b2CollideCircle.cpp */; };
 		4A5F48C21B95BBB200D3CE27 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F47FE1B95BBB200D3CE27 /* b2CollideEdge.cpp */; };
@@ -90,7 +90,7 @@
 
 /* Begin PBXFileReference section */
 		4A5F393A1B94CCA700D3CE27 /* gl_elements.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gl_elements.hpp; sourceTree = "<group>"; };
-		4A5F393B1B94EC0000D3CE27 /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = "../../../../../../boost-build/ios/framework/boost.framework"; sourceTree = "<group>"; };
+		4A5F393B1B94EC0000D3CE27 /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = "WoodFraming/extern/boost-build/ios/framework/boost.framework"; sourceTree = "<group>"; };
 		4A5F47F71B95BBB200D3CE27 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		4A5F47FB1B95BBB200D3CE27 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
 		4A5F47FC1B95BBB200D3CE27 /* b2BroadPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2BroadPhase.h; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A5F393F1B95B7D600D3CE27 /* boost.framework in Frameworks */,
+				4A4A494A1B9897C5009BAC49 /* boost.framework in Frameworks */,
 				4AF20C2C1B7F4F1000EEFB3E /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
