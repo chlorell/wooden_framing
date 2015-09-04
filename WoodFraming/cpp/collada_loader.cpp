@@ -8,7 +8,7 @@
 
 #include "collada_loader.hpp"
 #include <glm/gtc/matrix_transform.hpp>
-
+#include "graphics_data.hpp"
 
 using namespace floppy;
 
