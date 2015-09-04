@@ -391,6 +391,89 @@ public:
 using vertex_shader = basic_shader<GL_VERTEX_SHADER>;
 using fragment_shader = basic_shader<GL_FRAGMENT_SHADER>;
 
+    
+    
+    template <GLenum target>
+    struct basic_buffer : object {
+        
+        basic_buffer() noexcept {
+            glGenBuffers(1, &name);
+        }
+        
+        ~basic_buffer() noexcept {
+            if (name) glDeleteBuffers(1, &name);
+        }
+        
+        constexpr basic_buffer(basic_buffer&&) noexcept = default;
+        basic_buffer& operator=(basic_buffer&&) noexcept = default;
+        
+        explicit operator bool() const noexcept {
+            return glIsBuffer(name) == GL_TRUE;
+        }
+        
+        void bind() noexcept {
+            glBindBuffer(target, name);
+        }
+        
+        void unbind() noexcept {
+            glBindBuffer(target, 0);
+        }
+        
+        void data(GLsizei size, const GLvoid* data, GLenum usage) noexcept
+        {
+            glBufferData(target, size, data, usage);
+        }
+        
+        void sub_data(GLintptr offset, GLsizei size, const GLvoid* data) noexcept
+        {
+            glBufferSubData(target, offset, size, data);
+        }
+        
+        void* map(GLintptr offset, GLsizeiptr length, GLbitfield access) noexcept
+        {
+            return glMapBufferRange(target, offset, length, access);
+        }
+        
+        void flush_mapped_range(GLintptr offset, GLsizeiptr length) noexcept
+        {
+            glFlushMappedBufferRange(target, offset, length);
+        }
+        
+        void unmap() noexcept {
+            glUnmapBuffer(target);
+        }
+    };
+    
+    using vertex_buffer = basic_buffer<GL_ARRAY_BUFFER>;
+    using index_buffer = basic_buffer<GL_ELEMENT_ARRAY_BUFFER>;
+    
+    struct vertex_array : object {
+        
+        vertex_array() noexcept {
+            glGenVertexArrays(1, &name);
+        }
+        
+        ~vertex_array() noexcept {
+            if (name) glDeleteVertexArrays(1, &name);
+        }
+        
+        constexpr vertex_array(vertex_array&&) noexcept = default;
+        vertex_array& operator=(vertex_array&&) noexcept = default;
+        
+        explicit operator bool() noexcept {
+            return glIsVertexArray(name) == GL_TRUE;
+        }
+        
+        void bind() noexcept {
+            glBindVertexArray(name);
+        }
+        
+        void unbind() noexcept {
+            glBindVertexArray(0);
+        }
+    };
+    
+
 struct program : public object
 {
     program() : object(glCreateProgram())
@@ -455,6 +538,33 @@ struct program : public object
         glBindAttribLocation(name, index, attrib_name);
     }
     
+    void bind_attrib_to_buffer(vertex_buffer& buffer, GLuint attrib_index, GLint size,GLenum type,bool normalized,unsigned stride, long unsigned offset=0)
+    {
+        buffer.bind();
+        
+        glVertexAttribPointer(attrib_index, size, type, normalized, stride, (void*) offset);
+        
+        buffer.unbind();
+    }
+    
+    void draw_elements(index_buffer& buffer, GLenum mode ,GLsizei count,GLenum type,  long unsigned offset=0)
+    {
+        buffer.bind();
+        
+        glDrawElements(	 mode, count, type, (GLvoid *) offset);
+        
+        buffer.unbind();
+    }
+    
+    void draw_elements_instanced(index_buffer& buffer, unsigned instances,  GLenum mode ,GLsizei count,GLenum type,  long unsigned offset=0)
+    {
+        buffer.bind();
+        
+        glDrawElementsInstanced(	 mode, count, type, (GLvoid *) offset, instances);
+        
+        buffer.unbind();
+    }
+    
 private:
     template <GLenum StatusType>
     std::pair<bool, std::string> get_status() const noexcept
@@ -479,85 +589,6 @@ private:
     }
 };
 
-template <GLenum target>
-struct basic_buffer : object {
-    
-    basic_buffer() noexcept {
-        glGenBuffers(1, &name);
-    }
-
-    ~basic_buffer() noexcept {
-        if (name) glDeleteBuffers(1, &name);
-    }
-
-    constexpr basic_buffer(basic_buffer&&) noexcept = default;
-    basic_buffer& operator=(basic_buffer&&) noexcept = default;
-
-    explicit operator bool() const noexcept {
-        return glIsBuffer(name) == GL_TRUE;
-    }
-
-    void bind() noexcept {
-        glBindBuffer(target, name);
-    }
-
-    void unbind() noexcept {
-        glBindBuffer(target, 0);
-    }
-
-    void data(GLsizei size, const GLvoid* data, GLenum usage) noexcept
-    {
-        glBufferData(target, size, data, usage);
-    }
-    
-    void sub_data(GLintptr offset, GLsizei size, const GLvoid* data) noexcept
-    {
-        glBufferSubData(target, offset, size, data);
-    }
-    
-    void* map(GLintptr offset, GLsizeiptr length, GLbitfield access) noexcept
-    {
-        return glMapBufferRange(target, offset, length, access);
-    }
-    
-    void flush_mapped_range(GLintptr offset, GLsizeiptr length) noexcept
-    {
-        glFlushMappedBufferRange(target, offset, length);
-    }
-    
-    void unmap() noexcept {
-        glUnmapBuffer(target);
-    }
-};
-    
-using vertex_buffer = basic_buffer<GL_ARRAY_BUFFER>;
-using index_buffer = basic_buffer<GL_ELEMENT_ARRAY_BUFFER>;
-    
-struct vertex_array : object {
-
-    vertex_array() noexcept {
-        glGenVertexArrays(1, &name);
-    }
-
-    ~vertex_array() noexcept {
-        if (name) glDeleteVertexArrays(1, &name);
-    }
-    
-    constexpr vertex_array(vertex_array&&) noexcept = default;
-    vertex_array& operator=(vertex_array&&) noexcept = default;
-
-    explicit operator bool() noexcept {
-        return glIsVertexArray(name) == GL_TRUE;
-    }
-
-    void bind() noexcept {
-        glBindVertexArray(name);
-    }
-
-    void unbind() noexcept {
-        glBindVertexArray(0);
-    }
-};
 
 template <class T>
     T fact_func() {
