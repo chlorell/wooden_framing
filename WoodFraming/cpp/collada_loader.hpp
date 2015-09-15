@@ -15,6 +15,10 @@
 
 #include <glm/glm.hpp>
 
+#include "graphics_data.hpp"
+
+#include <vector>
+
 namespace floppy
 {
     template<typename srcT, typename dstT>
@@ -47,6 +51,9 @@ namespace floppy
         
         static glm::mat4 projection_from_camera(pugi::xml_node node);
         static glm::mat4 load_node_transform(pugi::xml_node node);
+        
+        std::pair<std::vector<float>, unsigned short> load_float_array(pugi::xml_node node, const char * idname);
+        std::vector<vertex> load_mesh_data(const char * mesh_id);
     };
     
     

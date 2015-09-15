@@ -30,9 +30,9 @@ namespace floppy {
         bool decompose(const glm::mat4&  transform)
         {
             glm::vec3 scale,skew;
+            glm::vec4 persp;
             
-            
-            return glm::decompose (transform, scale, rot, pos,  skew, perspective);
+            return glm::decompose (transform, scale, rot, pos,  skew, persp);
         }
      
     };
@@ -57,6 +57,33 @@ namespace floppy {
             return glm::decompose (world, scale, rot, pos,  skew, perspective);
         }
     };
+    
+    
+    struct vertex
+    {
+        glm::vec3 pos;
+        glm::vec3 normal;
+        glm::vec2 uv;
+    };
+    
+    
+    
+    
+    struct interleaved_vertexes
+    {
+        unsigned long size;
+        vertex vertexes[2];
+        vertex& operator[](unsigned long idx)
+        {
+            return vertexes[idx];
+        }
+    };
+    
+    
+    
+    
+    
+    
     
 }
 
