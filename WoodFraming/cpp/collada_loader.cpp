@@ -10,6 +10,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "graphics_data.hpp"
 #include <numeric>
+#include <algorithm>
+
 using namespace floppy;
 
 
@@ -108,8 +110,8 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
                         vertex & current=ret[i];
                         unsigned idx=i*(max_offset+1)+offset;
                         idx=indexes[idx];
-                        unsigned short stride=arrpair.second;
-                        for (int s=0; s<stride; ++s) {
+                        unsigned stride=arrpair.second;
+                        for (int s=0; s<std::min(stride,3u); ++s) {
                             current.pos[s]=arrpair.first[idx*stride+s];
                         }
                     }
@@ -119,8 +121,8 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
                         vertex & current=ret[i];
                         unsigned idx=i*(max_offset+1)+offset;
                         idx=indexes[idx];
-                        unsigned short stride=arrpair.second;
-                        for (int s=0; s<stride; ++s) {
+                        unsigned  stride=arrpair.second;
+                        for (int s=0; s<std::min(stride,3u); ++s) {
                             current.normal[s]=arrpair.first[idx*stride+s];
                         }
                     }
@@ -130,8 +132,8 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
                         vertex & current=ret[i];
                         unsigned idx=i*(max_offset+1)+offset;
                         idx=indexes[idx];
-                        unsigned short stride=arrpair.second;
-                        for (int s=0; s<stride; ++s) {
+                        unsigned  stride=arrpair.second;
+                        for (int s=0; s<std::min(stride,2u); ++s) {
                             current.uv[s]=arrpair.first[idx*stride+s];
                         }
                     }
