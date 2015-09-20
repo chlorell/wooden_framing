@@ -150,7 +150,7 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
     return ret;
 }
 
-std::pair<std::vector<float>, unsigned short> load_float_array(pugi::xml_node node, const char * idname)
+std::pair<std::vector<float>, unsigned short> collada_loader::load_float_array(pugi::xml_node node, const char * idname)
 {
     if(idname[0]=='#')idname++;
     pugi::xml_node source_or_ref = node.find_child_by_attribute("id", idname);
