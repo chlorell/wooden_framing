@@ -5,14 +5,16 @@
 //  Created by Mateusz Bugaj on 15.08.2015.
 //  Copyright (c) 2015 Ocean Planet Studios. All rights reserved.
 //
-
+precision mediump float;
 attribute vec4 position;
 attribute vec3 normal;
 
-varying lowp vec4 colorVarying;
-
 uniform mat4 modelViewProjectionMatrix;
 uniform mat3 normalMatrix;
+
+varying vec4 colorVarying;
+
+
 
 void main()
 {

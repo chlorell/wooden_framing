@@ -615,7 +615,7 @@ void test_bool()
     {}
 }
     
-void test_interface()
+void inline test_interface()
 {
     test_moveability<object>();
     test_moveability<texture_2d>();

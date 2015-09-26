@@ -6,21 +6,28 @@
 //  Copyright (c) 2015 Ocean Planet Studios. All rights reserved.
 //
 
-#include "iOS_wrapper.hpp"
 
 #include <string>
 #include <iostream>
+#include <memory>
 
 #include <OpenGLES/ES2/glext.h>
-
-#include <boost/filesystem.hpp>
 
 #include <pugixml.hpp>
 #include <Box2D/Box2D.h>
 #include <glm/glm.hpp>
 
+
+#include <boost/filesystem.hpp>
+
+
+#include "iOS_wrapper.hpp"
+#include "simple_renderer.hpp"
+
 namespace floppy{
-    
+
+    static std::unique_ptr<simple_renderer> renderer;
+    static std::string base_path;
     
 int desiredFPS()
 {
@@ -36,12 +43,13 @@ void startEngine(){
     std::cout<<"PUGIXML_VERSION="<<PUGIXML_VERSION<<std::endl;
     glm::vec2 ver(b2_version.major,b2_version.minor);
     
-    
+    renderer.reset(new simple_renderer(base_path));
 }
 
 
 void stopEngine(){
     std::cout<<"stopEngine"<<std::endl;
+    renderer.reset();
 }
 
     
@@ -59,9 +67,10 @@ void everyFrameUpdate(){
 }
 
 void drawCalls(){
-   
-    glClearColor(0., 0., 0., 1.);
-    glClear(GL_COLOR_BUFFER_BIT);
+    if(renderer)
+    {
+        renderer->draw();
+    }
 }
 
 void appWillTerminate()
@@ -84,8 +93,8 @@ void failedToCreateGLContext()
     
 void setResourcesBaseDirectory(const char * path)
 {
-        std::cout<<"setResourcesBaseDirectory:"<<path<<std::endl;
-    
+    std::cout<<"setResourcesBaseDirectory:"<<path<<std::endl;
+    base_path=path;
     for(auto entry : boost::filesystem::directory_iterator(path))
     {
          std::cout<<">>"<<entry.path().c_str()<<std::endl;

@@ -55,13 +55,14 @@
         self.delegate=self;
         self.preferredFramesPerSecond=floppy::desiredFPS();
         
-
+        [EAGLContext setCurrentContext:self.context];
         floppy::startEngine();
     }
 }
 
 - (void)dealloc
 {
+    [EAGLContext setCurrentContext:self.context];
     floppy::stopEngine();
 
     
@@ -95,11 +96,13 @@
 
 - (void)glkViewControllerUpdate:(GLKViewController *)controller
 {
+     [EAGLContext setCurrentContext:self.context];
      floppy::everyFrameUpdate();
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    [EAGLContext setCurrentContext:self.context];
     floppy::drawCalls();
 }
 

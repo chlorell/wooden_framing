@@ -10,6 +10,7 @@
 #define __WoodFraming__simple_renderer__
 
 #include "cpp/gl_elements.hpp"
+#include <string>
 
 namespace floppy {
     class simple_renderer
@@ -17,8 +18,8 @@ namespace floppy {
         gl::program prog1;
         gl::texture_2d textures[8];
      public:
-        simple_renderer();
-        
+        simple_renderer(const std::string& base_path);
+        void draw();
         
     };
 }
