@@ -42,7 +42,9 @@ struct object {
     }
     
     constexpr object(object&& x) noexcept : object(x.name)
-    {}
+    {
+        x.name = 0;
+    }
     
     object& operator=(object&& x) noexcept
     {
@@ -112,7 +114,7 @@ public:
     
     constexpr auto internal_format() const noexcept
     {
-        return std::get<0>(*this);
+        return std::get<ind_::internal_format>(*this);
     }
 
     constexpr auto format() const noexcept
