@@ -114,7 +114,7 @@ public:
     
     constexpr auto internal_format() const noexcept
     {
-        return std::get<ind_::internal_format>(*this);
+        return get<ind_::internal_format>();
     }
 
     constexpr auto format() const noexcept
