@@ -64,6 +64,8 @@
 		4A5F49391B95BBB200D3CE27 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F48BB1B95BBB200D3CE27 /* b2Rope.cpp */; };
 		4A5F49401B95BF8000D3CE27 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F493E1B95BF8000D3CE27 /* pugixml.cpp */; };
 		4A5F49431B95C26E00D3CE27 /* collada_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F49411B95C26E00D3CE27 /* collada_loader.cpp */; };
+		4A9069BC1BDBFF43000ABA52 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9069B91BDBFF43000ABA52 /* back.png */; };
+		4A9069BE1BDBFF43000ABA52 /* example.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4A9069BB1BDBFF43000ABA52 /* example.dae */; };
 		4AF20C011B7F49E000EEFB3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C001B7F49E000EEFB3E /* main.m */; };
 		4AF20C041B7F49E000EEFB3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */; };
 		4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C051B7F49E000EEFB3E /* Shader.fsh */; };
@@ -211,7 +213,9 @@
 		4A5F493F1B95BF8000D3CE27 /* pugixml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugixml.hpp; sourceTree = "<group>"; };
 		4A5F49411B95C26E00D3CE27 /* collada_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = collada_loader.cpp; sourceTree = "<group>"; };
 		4A5F49421B95C26E00D3CE27 /* collada_loader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = collada_loader.hpp; sourceTree = "<group>"; };
-		4A5F49441B95C90F00D3CE27 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
+		4A9069B91BDBFF43000ABA52 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		4A9069BA1BDBFF43000ABA52 /* example.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.blend; sourceTree = "<group>"; };
+		4A9069BB1BDBFF43000ABA52 /* example.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = example.dae; sourceTree = "<group>"; };
 		4AF20BFB1B7F49E000EEFB3E /* WoodFraming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoodFraming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF20BFF1B7F49E000EEFB3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AF20C001B7F49E000EEFB3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -482,6 +486,16 @@
 			path = extern/pugixml/src;
 			sourceTree = "<group>";
 		};
+		4A9069B81BDBFF43000ABA52 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A9069B91BDBFF43000ABA52 /* back.png */,
+				4A9069BA1BDBFF43000ABA52 /* example.blend */,
+				4A9069BB1BDBFF43000ABA52 /* example.dae */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		4AF20BF21B7F49E000EEFB3E = {
 			isa = PBXGroup;
 			children = (
@@ -505,7 +519,7 @@
 		4AF20BFD1B7F49E000EEFB3E /* WoodFraming */ = {
 			isa = PBXGroup;
 			children = (
-				4A5F49441B95C90F00D3CE27 /* resources */,
+				4A9069B81BDBFF43000ABA52 /* resources */,
 				4A5F393E1B95B6D400D3CE27 /* extern */,
 				4A5F39391B94CCA700D3CE27 /* cpp */,
 				4AF20C021B7F49E000EEFB3E /* AppDelegate.h */,
@@ -632,9 +646,11 @@
 			files = (
 				4AF20C131B7F49E000EEFB3E /* LaunchScreen.xib in Resources */,
 				4AF20C0E1B7F49E000EEFB3E /* Main.storyboard in Resources */,
+				4A9069BC1BDBFF43000ABA52 /* back.png in Resources */,
 				4AF20C101B7F49E000EEFB3E /* Images.xcassets in Resources */,
 				4AF20C081B7F49E000EEFB3E /* Shader.vsh in Resources */,
 				4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */,
+				4A9069BE1BDBFF43000ABA52 /* example.dae in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

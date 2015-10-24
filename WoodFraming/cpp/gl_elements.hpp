@@ -557,6 +557,12 @@ struct program : public object
         
         buffer.unbind();
     }
+    void draw_elements(GLenum mode ,GLsizei count,GLenum type,  long unsigned offset=0)
+    {
+       
+        glDrawElements(	 mode, count, type, (GLvoid *) offset);
+ 
+    }
     
     void draw_elements_instanced(index_buffer& buffer, unsigned instances,  GLenum mode ,GLsizei count,GLenum type,  long unsigned offset=0)
     {

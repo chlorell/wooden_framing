@@ -16,7 +16,8 @@ namespace floppy {
     class simple_renderer
     {
         gl::program prog1;
-        gl::texture_2d textures[8];
+        gl::vertex_buffer mesh;
+        int mesh_count;
      public:
         simple_renderer(const std::string& base_path);
         void draw();

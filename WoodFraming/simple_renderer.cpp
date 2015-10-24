@@ -16,6 +16,9 @@
 
 #include <boost/filesystem.hpp>
 
+
+#include "collada_loader.hpp"
+
 floppy::simple_renderer::simple_renderer(const std::string& base_path)
 {
     gl::vertex_shader vertex_s;
@@ -64,6 +67,21 @@ floppy::simple_renderer::simple_renderer(const std::string& base_path)
         std::cerr<<status_f.second;
         throw std::runtime_error("linking failed");
     }
+    
+    collada_loader loader;
+    std::ifstream collada_file((base/"example.dae").string());
+    loader.traverse(collada_file);
+    auto mesh_data=loader.load_mesh_data("Sphere-mesh");
+    mesh_count=mesh_data.size();
+    if (mesh_data.size()>0) {
+        mesh.data(mesh_data.size()*sizeof(vertex), mesh_data.data(), GL_STATIC_DRAW);
+        prog1.bind_attrib_location("position", 1);
+        prog1.bind_attrib_location("normal", 2);
+        prog1.bind_attrib_to_buffer(mesh, 1, sizeof(vertex), GL_FLOAT, false, 0);
+        prog1.bind_attrib_to_buffer(mesh, 2, sizeof(vertex), GL_TRUE, false, sizeof(float)*3);
+    }
+    
+    
 }
 
 
@@ -72,4 +90,8 @@ void floppy::simple_renderer::draw()
     glClearColor(0.f, 0.f, 0.f, 1.f);
     glClearDepthf(100.f);
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    
+    if(mesh_count>0)
+        prog1.draw_elements(GL_TRIANGLES, mesh_count, GL_UNSIGNED_BYTE);
+    
 }
