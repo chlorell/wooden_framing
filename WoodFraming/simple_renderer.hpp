@@ -17,6 +17,10 @@ namespace floppy {
     {
         gl::program prog1;
         gl::vertex_buffer mesh;
+        
+
+        
+        
         int mesh_count;
      public:
         simple_renderer(const std::string& base_path);

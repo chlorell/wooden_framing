@@ -18,6 +18,9 @@
 
 
 #include "collada_loader.hpp"
+#include <glm/glm.hpp>
+
+
 
 floppy::simple_renderer::simple_renderer(const std::string& base_path)
 {
@@ -92,6 +95,20 @@ void floppy::simple_renderer::draw()
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     
     if(mesh_count>0)
+    {
+        
+        //uniform mat4 modelViewProjectionMatrix;
+        //uniform mat3 normalMatrix;
+        glm::mat4  modelViewProjectionMatrix(glm::one<glm::mat4>());
+        glm::mat3  normalMatrix(glm::one<glm::mat3>());
+        
+        
+        int mvpId=prog1.uniform_location("modelViewProjectionMatrix");
+        int normId=prog1.uniform_location("normalMatrix");
+
+        prog1.uniform_value(mvpId, modelViewProjectionMatrix);
+        prog1.uniform_value(normId, normalMatrix);
+        
         prog1.draw_elements(GL_TRIANGLES, mesh_count, GL_UNSIGNED_BYTE);
-    
+    }
 }

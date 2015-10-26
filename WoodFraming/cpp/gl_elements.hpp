@@ -21,6 +21,8 @@
 #include <vector>
 #include <string>
 
+#include <glm/glm.hpp>
+
 // Lightweight abstractions for OpenGL objects.
 namespace gl {
     
@@ -474,8 +476,144 @@ using fragment_shader = basic_shader<GL_FRAGMENT_SHADER>;
             glBindVertexArray(0);
         }
     };
-    
 
+
+template<typename T>
+struct glm_type_traits
+{
+    static constexpr unsigned size()
+    {
+        return sizeof(T);
+    }
+    
+    static constexpr int gl_type()
+    {
+        return GL_FLOAT;
+    }
+    
+    static void set_uniform(unsigned location, const T& v)
+    {
+        
+    }
+};
+
+
+template<> struct glm_type_traits<glm::vec2>
+{
+    static constexpr unsigned size()
+    {
+        return sizeof(glm::vec2);
+    }
+    
+    static constexpr int gl_type()
+    {
+        return GL_FLOAT;
+    }
+    
+    static void set_uniform(unsigned location, const glm::vec2& v)
+    {
+        glUniform2fv(location, 1, &v.x);
+    }
+
+};
+
+template<unsigned arr_count> struct glm_type_traits<std::array<glm::vec2, arr_count> >
+{
+    static constexpr unsigned size()
+    {
+        return sizeof(glm::vec2);
+    }
+    
+    static constexpr int gl_type()
+    {
+        return GL_FLOAT;
+    }
+    
+    static void set_uniform(unsigned location, const std::array<glm::vec2, arr_count>& v)
+    {
+        glUniform3fv(location, arr_count, &v[0].x);
+    }
+    
+};
+    
+    
+template<> struct glm_type_traits<glm::vec3>
+{
+    static constexpr unsigned size()
+    {
+        return sizeof(glm::vec3);
+    }
+    
+    static constexpr int gl_type()
+    {
+        return GL_FLOAT;
+    }
+    
+    static void set_uniform(unsigned location, const glm::vec3& v)
+    {
+        glUniform3fv(location, 1, &v.x);
+    }
+    
+};
+    
+template<unsigned arr_count> struct glm_type_traits<std::array<glm::vec3, arr_count> >
+{
+    static constexpr unsigned size()
+    {
+        return sizeof(glm::vec3);
+    }
+    
+    static constexpr int gl_type()
+    {
+        return GL_FLOAT;
+    }
+    
+    static void set_uniform(unsigned location, const std::array<glm::vec3, arr_count>& v)
+    {
+        glUniform3fv(location, arr_count, &v[0].x);
+    }
+    
+};
+
+
+template<> struct glm_type_traits<glm::mat3>
+{
+    static constexpr unsigned size()
+    {
+        return sizeof(glm::mat3);
+    }
+    
+    static constexpr int gl_type()
+    {
+        return GL_FLOAT;
+    }
+    
+    static void set_uniform(unsigned location, const glm::mat3& v)
+    {
+        glUniformMatrix3fv(location, 1,false, &v[0][0]);
+    }
+    
+};
+    
+template<> struct glm_type_traits<glm::mat4>
+{
+    static constexpr unsigned size()
+    {
+        return sizeof(glm::mat4);
+    }
+    
+    static constexpr int gl_type()
+    {
+        return GL_FLOAT;
+    }
+    
+    static void set_uniform(unsigned location, const glm::mat4& v)
+    {
+        glUniformMatrix4fv(location, 1,false, &v[0][0]);
+    }
+    
+};
+    
 struct program : public object
 {
     program() : object(glCreateProgram())
@@ -528,8 +666,8 @@ struct program : public object
     }
     
     template <typename T>
-    void uniform_value(GLint location, T& value) noexcept {
-        glGetUniformiv(name, location, &value);
+    void uniform_value(GLint location, const T& value) noexcept {
+        glm_type_traits<T>::set_uniform(location, value);
     }
     
     auto attrib_location(const char* attrib_name) noexcept {
