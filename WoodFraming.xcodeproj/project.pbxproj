@@ -65,7 +65,7 @@
 		4A5F49401B95BF8000D3CE27 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F493E1B95BF8000D3CE27 /* pugixml.cpp */; };
 		4A5F49431B95C26E00D3CE27 /* collada_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F49411B95C26E00D3CE27 /* collada_loader.cpp */; };
 		4A9069BC1BDBFF43000ABA52 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9069B91BDBFF43000ABA52 /* back.png */; };
-		4A9069BE1BDBFF43000ABA52 /* example.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4A9069BB1BDBFF43000ABA52 /* example.dae */; };
+		4A9069BE1BDBFF43000ABA52 /* example.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4A9069BB1BDBFF43000ABA52 /* example.dae */; settings = {ATTRIBUTES = ("--decompress", ); }; };
 		4AF20C011B7F49E000EEFB3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C001B7F49E000EEFB3E /* main.m */; };
 		4AF20C041B7F49E000EEFB3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20C031B7F49E000EEFB3E /* AppDelegate.mm */; };
 		4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4AF20C051B7F49E000EEFB3E /* Shader.fsh */; };

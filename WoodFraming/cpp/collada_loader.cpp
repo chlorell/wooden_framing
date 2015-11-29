@@ -18,7 +18,12 @@ using namespace floppy;
 void collada_loader::traverse(std::istream& istream)
 {
 
-    input_document.load(istream);
+    pugi::xml_parse_result res=input_document.load(istream);
+    if(res.status!=pugi::status_ok)
+    {
+        std::cout<<istream.rdbuf();
+    }
+        
 }
 
 glm::mat4 collada_loader::projection_from_camera(pugi::xml_node node)
@@ -55,9 +60,9 @@ glm::mat4 collada_loader::load_node_transform(pugi::xml_node node)
 
 std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
 {
-    std::string  xpath="/library_geometries/geometry[@id=";
+    std::string  xpath="/COLLADA/library_geometries/geometry[@id='";
     xpath+=mesh_id;
-    xpath+="]";
+    xpath+="']";
     
     std::vector<vertex> ret;
     
