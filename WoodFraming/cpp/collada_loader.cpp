@@ -76,16 +76,18 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
             
             pugi::xml_node polylist=base.child("polylist");
             unsigned polycount=polylist.attribute("count").as_uint();
-            std::vector<unsigned short> polys(polycount);
+            std::vector<unsigned short> polys;
+            polys.reserve(polycount);
  
                 pugi::xml_node vcount=polylist.child("vcount");
-                collada_loader::fill_array(vcount, polys);
-            
-            std::vector<unsigned> indexes(std::accumulate(polys.begin(), polys.end(), 0));
-            ret.reserve(indexes.max_size());
+                collada_loader::fill_array< std::vector<unsigned short>,converter<unsigned, unsigned short> >(vcount, polys);
+            unsigned indexes_size=std::accumulate(polys.begin(), polys.end(), 0);
+            std::vector<unsigned> indexes;
+            ret.reserve(indexes_size);
+            indexes.reserve(indexes_size);
             pugi::xml_node idxbuff=polylist.child("p");
             collada_loader::fill_array(idxbuff, indexes);
-            std::vector<std::pair<std::vector<float>, unsigned short>> attributes(3);
+            std::vector<std::pair<std::vector<float>, unsigned short>> attributes;
             std::vector<unsigned short> offsets;
             std::vector<std::string> semantics;
             unsigned short max_offset=0;
