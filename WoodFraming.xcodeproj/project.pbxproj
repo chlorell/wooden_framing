@@ -887,7 +887,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/chlorell/boost-build/ios/framework",
+					"$(PROJECT_DIR)/WoodFraming/extern/boost_frameworks/boost-build/ios/framework",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
