@@ -95,11 +95,11 @@ void setResourcesBaseDirectory(const char * path)
 {
     std::cout<<"setResourcesBaseDirectory:"<<path<<std::endl;
     base_path=path;
-  /*  for(auto entry : boost::filesystem::directory_iterator(path))
+    for(auto entry : boost::filesystem::directory_iterator(path))
     {
          std::cout<<">>"<<entry.path().c_str()<<std::endl;
     }
-    */
+    
  
 }
     

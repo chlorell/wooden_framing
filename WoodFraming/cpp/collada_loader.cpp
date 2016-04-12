@@ -41,9 +41,10 @@ glm::mat4 collada_loader::projection_from_camera(pugi::xml_node node)
         znear=std::atof(perspective.child_value("znear"));
         zfar=std::atof(perspective.child_value("zfar"));
        
+    double yfov=2 * glm::atan(glm::tan(glm::radians(xfov) * 0.5) * aspect);
  
-        //xfov to yfov
-     return glm::perspective(2 * atan(tan(xfov * 0.5) * aspect), aspect, znear, zfar);
+    
+    return glm::perspective(yfov, aspect, znear, zfar);
 }
 
 
@@ -53,10 +54,48 @@ glm::mat4 collada_loader::load_node_transform(pugi::xml_node node)
     std::stringstream is(node.child_value("matrix"));
     for(int i=0;i<4;++i)
           for(int j=0;j<4;++j)
-              is>>ret[i][j];
+          {
+              double v;
+              is>>v;
+              ret[j][i]=v;
+          }
     
     return ret;
 }
+
+
+glm::mat4 collada_loader::get_node_transform(const char * mesh_name)
+{
+    std::string  xpath="/COLLADA/library_visual_scenes/visual_scene/node[@id='";
+    xpath+=mesh_name;
+    xpath+="']";
+    pugi::xpath_node find=input_document.select_node(xpath.c_str());
+    if(find.node())
+    {
+        pugi::xml_node base=find.node();
+        return load_node_transform(base);
+    }else
+    {
+        return glm::mat4();
+    }
+}
+glm::mat4 collada_loader::get_camera_projection(const char * camera_name)
+{
+    std::string  xpath="/COLLADA/library_cameras/camera[@id='";
+    xpath+=camera_name;
+    xpath+="']";
+    pugi::xpath_node find=input_document.select_node(xpath.c_str());
+    if(find.node())
+    {
+        pugi::xml_node base=find.node();
+        return projection_from_camera(base);
+    }else
+    {
+        return glm::mat4();
+    }
+}
+
+
 
 std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
 {
@@ -76,28 +115,41 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
             
             pugi::xml_node polylist=base.child("polylist");
             unsigned polycount=polylist.attribute("count").as_uint();
+            
+            
             std::vector<unsigned short> polys;
-            polys.reserve(polycount);
- 
+            //loading vertex counts per poly
+            {
+                polys.reserve(polycount);
+     
                 pugi::xml_node vcount=polylist.child("vcount");
                 collada_loader::fill_array< std::vector<unsigned short>,converter<unsigned, unsigned short> >(vcount, polys);
+            }
+            
             unsigned indexes_size=std::accumulate(polys.begin(), polys.end(), 0);
+            
             std::vector<unsigned> indexes;
-            ret.reserve(indexes_size);
-            indexes.reserve(indexes_size);
-            pugi::xml_node idxbuff=polylist.child("p");
-            collada_loader::fill_array(idxbuff, indexes);
+            {//loading actual index buffer
+                ret.reserve(indexes_size);
+                
+                indexes.reserve(indexes_size);
+                pugi::xml_node idxbuff=polylist.child("p");
+                collada_loader::fill_array(idxbuff, indexes);
+            }
+            
             std::vector<std::pair<std::vector<float>, unsigned short>> attributes;
             std::vector<unsigned short> offsets;
             std::vector<std::string> semantics;
+            
             unsigned short max_offset=0;
+            
             for ( auto node : polylist.children("input"))
             {
                 std::string semantic=node.attribute("semantic").as_string();
                 unsigned short offset=node.attribute("offset").as_uint();
                 semantics.push_back(semantic);
                 offsets.push_back(offset);
-                if(offset>max_offset)max_offset=offset;
+                max_offset=std::max(offset, max_offset);
                 attributes.push_back(load_float_array(base, node.attribute("source").as_string()));
             }
             
@@ -167,8 +219,20 @@ std::pair<std::vector<float>, unsigned short> collada_loader::load_float_array(p
         {
             pugi::xml_node arr=source_or_ref.child("float_array");
             if(arr){
-                std::vector<float> float_arr(arr.attribute("count").as_ullong());
-                unsigned short stride=arr.attribute("stride").as_uint();
+                std::vector<float> float_arr;
+                float_arr.reserve(arr.attribute("count").as_ullong());
+                
+                unsigned stride=0;
+                pugi::xml_node technique=source_or_ref.child("technique_common");
+                if(technique)
+                {
+                    pugi::xml_node accessor=technique.child("accessor");
+                    if(accessor.attribute("source").as_string()==(std::string("#")+arr.attribute("id").as_string()))
+                    {
+                        stride=accessor.attribute("stride").as_uint();
+                    }
+                }
+                
                 collada_loader::fill_array(arr, float_arr);
                 return std::make_pair(float_arr, stride);
             }

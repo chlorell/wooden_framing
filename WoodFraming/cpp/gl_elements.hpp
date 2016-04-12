@@ -425,25 +425,32 @@ using fragment_shader = basic_shader<GL_FRAGMENT_SHADER>;
         
         void data(GLsizei size, const GLvoid* data, GLenum usage) noexcept
         {
+            bind();
             glBufferData(target, size, data, usage);
+            unbind();
         }
         
         void sub_data(GLintptr offset, GLsizei size, const GLvoid* data) noexcept
         {
+            bind();
             glBufferSubData(target, offset, size, data);
+            unbind();
         }
         
         void* map(GLintptr offset, GLsizeiptr length, GLbitfield access) noexcept
         {
+            bind();
             return glMapBufferRange(target, offset, length, access);
         }
         
         void flush_mapped_range(GLintptr offset, GLsizeiptr length) noexcept
         {
+            bind();
             glFlushMappedBufferRange(target, offset, length);
         }
         
         void unmap() noexcept {
+            bind();
             glUnmapBuffer(target);
         }
     };
@@ -609,7 +616,7 @@ template<> struct glm_type_traits<glm::mat4>
     
     static void set_uniform(unsigned location, const glm::mat4& v)
     {
-        glUniformMatrix4fv(location, 1,false, &v[0][0]);
+        glUniformMatrix4fv(location, 1,GL_FALSE, &v[0][0]);
     }
     
 };
@@ -687,6 +694,11 @@ struct program : public object
         buffer.unbind();
     }
     
+    void use()const
+    {
+        glUseProgram(name);
+    }
+    
     void draw_elements(index_buffer& buffer, GLenum mode ,GLsizei count,GLenum type,  long unsigned offset=0)
     {
         buffer.bind();
@@ -695,10 +707,10 @@ struct program : public object
         
         buffer.unbind();
     }
-    void draw_elements(GLenum mode ,GLsizei count,GLenum type,  long unsigned offset=0)
+    void draw_elements(GLenum mode ,GLsizei count,GLsizei first=0)
     {
        
-        glDrawElements(	 mode, count, type, (GLvoid *) offset);
+        glDrawArrays(	mode, first, count);
  
     }
     

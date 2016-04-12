@@ -16,12 +16,16 @@ namespace floppy {
     class simple_renderer
     {
         gl::program prog1;
+        int prog1_modelViewProjectionMatrix, prog1_normalMatrix;
+        
         gl::vertex_buffer mesh;
         
-
+        glm::mat4 model;
+        glm::mat3 model_normal;
+        glm::mat4 camera_perspective;
         
         
-        int mesh_count;
+        unsigned long mesh_count;
      public:
         simple_renderer(const std::string& base_path);
         void draw();
