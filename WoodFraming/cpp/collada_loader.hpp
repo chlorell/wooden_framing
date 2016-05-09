@@ -57,7 +57,7 @@ namespace floppy
         static glm::mat4 load_node_transform(pugi::xml_node node);
         
         std::pair<std::vector<float>, unsigned short> load_float_array(pugi::xml_node node, const char * idname);
-        std::vector<vertex> load_mesh_data(const char * mesh_id);
+        std::vector<vertex_anim> load_mesh_data(const char * mesh_id);
         glm::mat4 get_node_transform(const char * mesh_name);
         glm::mat4 get_camera_projection(const char * camera_name);
     };

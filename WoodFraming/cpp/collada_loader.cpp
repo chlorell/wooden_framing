@@ -97,13 +97,13 @@ glm::mat4 collada_loader::get_camera_projection(const char * camera_name)
 
 
 
-std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
+std::vector<vertex_anim> collada_loader::load_mesh_data(const char * mesh_id)
 {
     std::string  xpath="/COLLADA/library_geometries/geometry[@id='";
     xpath+=mesh_id;
     xpath+="']";
     
-    std::vector<vertex> ret;
+    std::vector<vertex_anim> ret;
     
     pugi::xpath_node find=input_document.select_node(xpath.c_str());
     if(find.node())
@@ -154,7 +154,7 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
             }
             
             for (unsigned i=0; i<indexes.size(); i+=max_offset+1) {
-                vertex current;
+                vertex_anim current;
                 ret.push_back(current);
                 
                 
@@ -166,7 +166,7 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
                 auto arrpair=attributes[attr];
                 if(semantic=="VERTEX") {
                     for (unsigned i=0; i<ret.size();++i) {
-                        vertex & current=ret[i];
+                        vertex_anim & current=ret[i];
                         unsigned idx=i*(max_offset+1)+offset;
                         idx=indexes[idx];
                         unsigned stride=arrpair.second;
@@ -177,7 +177,7 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
                 }else if(semantic=="NORMAL")
                 {
                     for (unsigned i=0; i<ret.size();++i) {
-                        vertex & current=ret[i];
+                        vertex_anim & current=ret[i];
                         unsigned idx=i*(max_offset+1)+offset;
                         idx=indexes[idx];
                         unsigned  stride=arrpair.second;
@@ -188,7 +188,7 @@ std::vector<vertex> collada_loader::load_mesh_data(const char * mesh_id)
                 }else if(semantic=="TEXCOORD")
                 {
                     for (unsigned i=0; i<ret.size();++i) {
-                        vertex & current=ret[i];
+                        vertex_anim & current=ret[i];
                         unsigned idx=i*(max_offset+1)+offset;
                         idx=indexes[idx];
                         unsigned  stride=arrpair.second;

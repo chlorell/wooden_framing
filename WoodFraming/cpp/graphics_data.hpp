@@ -66,7 +66,14 @@ namespace floppy {
         glm::vec2 uv;
     };
     
-    
+    struct vertex_anim
+    {
+        glm::vec3 pos;
+        glm::vec3 normal;
+        glm::vec2 uv;
+        glm::vec4 weights;
+        glm::tvec4<unsigned char> weights_indexes;
+    };
     
     
     struct interleaved_vertexes

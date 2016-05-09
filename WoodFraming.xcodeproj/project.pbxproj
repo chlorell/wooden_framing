@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A290C541CC665BB0052B654 /* anemone.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4A290C531CC665BB0052B654 /* anemone.dae */; };
 		4A4A494A1B9897C5009BAC49 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5F393B1B94EC0000D3CE27 /* boost.framework */; };
 		4A5F48C01B95BBB200D3CE27 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F47FB1B95BBB200D3CE27 /* b2BroadPhase.cpp */; };
 		4A5F48C11B95BBB200D3CE27 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F47FD1B95BBB200D3CE27 /* b2CollideCircle.cpp */; };
@@ -91,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A290C531CC665BB0052B654 /* anemone.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = anemone.dae; sourceTree = "<group>"; };
 		4A4A494B1B998C3A009BAC49 /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = glm; path = extern/glm/glm; sourceTree = "<group>"; };
 		4A4A494C1B99A118009BAC49 /* graphics_data.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = graphics_data.hpp; sourceTree = "<group>"; };
 		4A5F393A1B94CCA700D3CE27 /* gl_elements.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gl_elements.hpp; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 		4A9069B81BDBFF43000ABA52 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A290C531CC665BB0052B654 /* anemone.dae */,
 				4A9069B91BDBFF43000ABA52 /* back.png */,
 				4A9069BA1BDBFF43000ABA52 /* example.blend */,
 				4A9069BB1BDBFF43000ABA52 /* example.dae */,
@@ -650,6 +653,7 @@
 				4AF20C101B7F49E000EEFB3E /* Images.xcassets in Resources */,
 				4AF20C081B7F49E000EEFB3E /* Shader.vsh in Resources */,
 				4AF20C061B7F49E000EEFB3E /* Shader.fsh in Resources */,
+				4A290C541CC665BB0052B654 /* anemone.dae in Resources */,
 				4A9069BE1BDBFF43000ABA52 /* example.dae in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
