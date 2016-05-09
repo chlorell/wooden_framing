@@ -93,15 +93,14 @@ public:
 };
 
 
-class texture_format_desc final : std::tuple<GLint, GLint, GLint, GLuint>
+class texture_format_desc final : std::tuple<GLint, GLint, GLint>
 {
-    using base = std::tuple<GLint, GLint, GLint, GLuint>;
+    using base = std::tuple<GLint, GLint, GLint>;
     
     enum class ind_ : std::size_t {
         internal_format = 0,
         format,
-        type,
-        border
+        type
     };
         
     using base::base;
@@ -128,18 +127,13 @@ public:
     {
         return get<ind_::type>();
     }
-    
-    constexpr auto border() const noexcept
-    {
-        return get<ind_::border>();
-    }
 };
 
 namespace texture_format
 {
-    constexpr texture_format_desc rgb8{GL_RGB8, GL_RGB, GL_BYTE, 0};
-    constexpr texture_format_desc rgba8{GL_RGBA8, GL_RGBA, GL_BYTE, 0};
-    constexpr texture_format_desc rgb32f{GL_RGB32F, GL_RGB, GL_FLOAT, 0};
+    constexpr texture_format_desc rgb8{GL_RGB8, GL_RGB, GL_BYTE};
+    constexpr texture_format_desc rgba8{GL_RGBA8, GL_RGBA, GL_BYTE};
+    constexpr texture_format_desc rgb32f{GL_RGB32F, GL_RGB, GL_FLOAT};
 }
 
 struct texture_2d : basic_texture<GL_TEXTURE_2D>
@@ -156,8 +150,7 @@ struct texture_2d : basic_texture<GL_TEXTURE_2D>
         glTexImage2D(GL_TEXTURE_2D, level,
                      tex_fmt.internal_format(),
                      width, height,
-                     tex_fmt.border(),
-                     tex_fmt.format(),
+                     0, tex_fmt.format(),
                      tex_fmt.type(), data);
     }
 };
@@ -177,8 +170,7 @@ struct texture_3d : basic_texture<GL_TEXTURE_3D>
         glTexImage3D(GL_TEXTURE_3D, level,
                      tex_fmt.internal_format(),
                      width, height, depth,
-                     tex_fmt.border(),
-                     tex_fmt.format(),
+                     0, tex_fmt.format(),
                      tex_fmt.type(), data);
     }
 };
